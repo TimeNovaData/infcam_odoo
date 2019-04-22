@@ -1,0 +1,18 @@
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="recurring_task_action">
+			<field name="name">Tarefas Recorrentes</field>
+			<field name="res_model">recurring_task</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Lista de tarefas recorrentes.
+				</p>
+			</field>
+		</record>
+
+		<menuitem id="recurring_task_menu" name="Tarefas Recorrentes" sequence="20"
+			parent="project.menu_project_management" action="recurring_task_action" />
+	</data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="recurring_task_tree">
+      <field name="name">recurring_task.tree</field>
+      <field name="model">recurring_task</field>
+      <field name="view_type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Tarefas Recorrentes">
+          <field name="name"/>
+          <field name="project_id"/>
+          <field name="stage_id"/>
+          <field name="user_id"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>
