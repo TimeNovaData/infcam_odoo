@@ -1,0 +1,168 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mrp_repair.view_repair_order_form">
+      <field name="name">mrp_repair.form</field>
+      <field name="model">mrp.repair</field>
+      <field name="view_type">form</field>
+      <field name="arch" type="xml">
+        <form string="Repair Order">
+           <header>
+               <button name="action_send_mail" states="draft" string="Send Quotation" type="object"/>
+               <button name="print_repair_order" states="draft" string="Print Quotation" type="object"/>
+               <button name="action_validate" states="draft" type="object" string="Confirm Repair" class="oe_highlight"/>
+               <button name="action_repair_start" attrs="{'invisible': ['&amp;', ('state','!=','confirmed'), '!', '&amp;', ('state','=','ready'), ('invoice_method','=','b4repair')]}" type="object" string="Start Repair" class="oe_highlight"/>
+               <button name="action_repair_cancel_draft" states="cancel" string="Set to Draft" type="object"/>
+               <button name="action_repair_end" states="under_repair" type="object" string="End Repair" class="oe_highlight"/>
+               <button name="action_repair_invoice_create" states="2binvoiced" type="object" string="Create Invoice" class="oe_highlight"/>
+               <button name="action_repair_cancel" string="Cancel Repair" type="object" attrs="{'invisible':['|',('invoice_method','!=','none'), ('state', 'not in',('confirmed','2binvoiced','ready','under_repair'))]}"/>
+               <button name="action_repair_cancel" states="draft" type="object" string="Cancel Repair"/>
+           </header>
+           <sheet string="Repairs order">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_created_invoice" type="object" class="oe_stat_button" icon="fa-pencil-square-o" string="Invoice" attrs="{'invisible': ['|',('invoice_method','=','none'), ('state','in',('confirmed','2binvoiced','draft'))]}">
+                    </button>
+                </div>
+                <label for="name"/>
+                <h1>
+                    <field name="name"/>
+                </h1>
+                <group>
+                    <group>
+                        <field name="tracking" invisible="1" attrs="{'readonly': 1}"/>
+                        <field name="product_id" domain="[('type', 'in', ['product', 'consu'])]"/>
+                        <label for="product_qty"/>
+                        <div class="o_row">
+                            <field name="product_qty"/>
+                            <field name="product_uom" groups="product.group_uom"/>
+                        </div>
+                        <field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" groups="stock.group_production_lot" attrs="{'required': [('tracking', '!=', 'none')], 'readonly': [('state', '=', 'done')]}"/>
+                        <field name="partner_id" attrs="{'required':[('invoice_method','!=','none')]}"/>
+                        <field name="address_id" groups="sale.group_delivery_invoice_address"/>
+                        <field name="responsavel" />
+                    </group>
+                    <group>
+                        <field name="location_id"/>
+                        <field name="location_dest_id"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        <field name="guarantee_limit"/>
+                        <field name="invoice_method"/>
+                        <field name="state"/>
+                        <field name="partner_invoice_id" attrs="{'invisible':[('invoice_method','=', 'none')],'required':[('invoice_method','!=','none')]}" groups="sale.group_delivery_invoice_address"/>
+                        <field name="pricelist_id" groups="product.group_sale_pricelist" context="{'product_id':product_id}" attrs="{'invisible':[('invoice_method','=', 'none')]}"/>
+                    </group>
+                </group>
+            <notebook>
+                <page string="Parts">
+                    <field name="operations" context="{'default_product_uom_qty': product_qty}">
+                        <form string="Operations">
+                            <notebook>
+                                <page string="Repair Line">
+                                    <group>
+                                        <group>
+                                            <field name="product_id"/>
+                                            <field name="name"/>
+                                            <label for="product_uom_qty"/>
+                                            <div class="o_row">
+                                                <field name="product_uom_qty"/>
+                                                <field name="product_uom" groups="product.group_uom"/>
+                                            </div>
+                                            <field name="type" invisible="1"/>
+                                            <field name="price_unit"/>
+                                            <field name="tax_id" widget="many2many_tags" domain="[('type_tax_use','=','sale')]"/>
+                                            <field name="invoiced" invisible="1"/>
+                                            <field name="price_subtotal" widget="monetary" invisible="1"/>
+                                        </group>
+                                        <group groups="stock.group_stock_multi_locations">
+                                            <field name="location_id"/>
+                                            <field name="location_dest_id"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="History" attrs="{'invisible':[('move_id','=', False)]}">
+                                    <group>
+                                        <field name="move_id"/>
+                                        <field name="invoice_line_id" invisible="1"/>
+                                    </group>
+                                </page>
+                             </notebook>
+                        </form>
+                        <tree string="Operations" editable="bottom">
+                            <field name="type"/>
+                            <field name="product_id"/>
+                            <field name="name"/>
+                            <field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" groups="stock.group_production_lot"/>
+                            <field name="location_id" groups="stock.group_stock_multi_locations"/>
+                            <field name="location_dest_id" groups="stock.group_stock_multi_locations"/>
+                            <field name="product_uom_qty" string="Quantity"/>
+                            <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
+                            <field name="price_unit"/>
+                            <field name="tax_id" widget="many2many_tags" domain="[('type_tax_use','=','sale')]"/>
+                            <field name="price_subtotal" widget="monetary"/>
+                        </tree>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="amount_untaxed" sum="Untaxed amount"/>
+                        <field name="amount_tax"/>
+                        <div class="oe_subtotal_footer_separator oe_inline">
+                            <label for="amount_total"/>
+                            <button name="button_dummy" states="draft" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                        </div>
+                        <field name="amount_total" nolabel="1" sum="Total amount" class="oe_subtotal_footer_separator"/>
+                    </group>
+                    <div class="oe_clear"/>
+                </page>
+                <page string="Operations">
+                    <!-- <field name="invoice_id"/> -->
+                    <field name="fees_lines">
+                        <form string="Fees">
+                            <group>
+                                <field name="product_id"/>
+                                <field name="name"/>
+                                <label for="product_uom_qty"/>
+                                <div class="o_row">
+                                    <field name="product_uom_qty" string="Quantity"/>
+                                    <field name="product_uom" groups="product.group_uom"/>
+                                </div>
+                                <field name="price_unit"/>
+                                <field widget="many2many_tags" name="tax_id" domain="[('type_tax_use','=','sale')]"/>
+                                <field name="price_subtotal" widget="monetary" invisible="1"/>
+                            </group>
+                        </form>
+                        <tree string="Fees" editable="bottom">
+                            <field name="product_id" domain="[('type','=','service')]" required="True"/>
+                            <field name="name"/>
+                            <field name="product_uom_qty" string="Quantity"/>
+                            <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
+                            <field name="price_unit"/>
+                            <field name="tax_id" domain="[('type_tax_use', '=', 'sale')]" widget="many2many_tags"/>
+                            <field name="price_subtotal" widget="monetary"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Extra Info" groups="base.group_no_one">
+                    <group>
+                        <group>
+                            <field name="move_id"/>
+                        </group>
+                        <group>
+                            <field name="repaired"/>
+                            <field name="invoiced"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Notes">
+                    <field name="internal_notes" placeholder="Add internal notes..."/>
+                    <field name="quotation_notes" placeholder="Add quotation notes..."/>
+                </page>
+            </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

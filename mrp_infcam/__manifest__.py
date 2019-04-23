@@ -14,5 +14,8 @@
     'category': '',
     'version': '1.0',
     'depends': ['base', 'mrp_repair', 'mail', 'contacts'],
-    'data': [],
+    'data': [
+        'views/mrp_repair_kanban.xml',
+        'views/mrp_repair_form.xml'
+    ],
 }
