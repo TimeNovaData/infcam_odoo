@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <record model="ir.ui.view" id="sale.report_saleorder_document">
-      <field name="name">report_saleorder_document</field>
+      <field name="name">sale_infcam.report_saleorder_document</field>
       <field name="model">report_saleorder_document</field>
       <field name="view_type">qweb</field>
       <field name="arch" type="xml">
