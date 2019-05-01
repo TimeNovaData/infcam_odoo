@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_mudanca_responsavel" model="mail.template">
+            <field name="name">Mudança de Responsável</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Nova OS atribuída</field>
+            <field name="email_to">${object.responsavel.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_mrp_repair"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[<h3>Nova OS atribuída</h3>
+                    <p>
+                        Olá, ${object.responsavel.name}!
+                    </p>
+                    <p>
+                        A OS ${object.name} foi atribuída a você no Odoo, por favor, verificar.
+                    </p>
+                    <p>
+                        Para acessá-la, <a href="http://infcam.dyndns.tv:8069/web#id=${object.id}&view_type=form&model=mrp.repair&menu_id=286&action=404">clique aqui</a>.
+                    </p>
+                ]]>
+	        </field>
+        </record>
+    </data>
+</odoo>

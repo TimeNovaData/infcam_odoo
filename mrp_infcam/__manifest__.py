@@ -16,6 +16,8 @@
     'depends': ['base', 'mrp_repair', 'mail', 'contacts'],
     'data': [
         'views/mrp_repair_kanban.xml',
-        'views/mrp_repair_form.xml'
+        'views/mrp_repair_form.xml',
+        'views/email_template_mudanca_responsavel.xml',
+        'views/email_template_notificacao_cliente.xml'
     ],
 }

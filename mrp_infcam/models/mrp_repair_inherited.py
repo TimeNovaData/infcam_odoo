@@ -46,3 +46,49 @@ class MrpRepair(models.Model):
         string='Responsavel',
         help='Responsável pelo suporte',
         track_visibility='onchange')
+
+    @api.one
+    def get_mrp_repair_state(self):
+
+        state_list = {
+            'draft': 'Cotação',
+            'cancel': 'Cancelado',
+            'confirmed': 'Confirmado',
+            'under_repair': 'Em Reparo',
+            'ready': 'Pronto para Reparar',
+            '2binvoiced': 'Para ser Faturado',
+            'invoice_except': 'Exceção de Faturamento',
+            'waiting_stock': 'Aguardando Peças',
+            'waiting_withdrawal': 'Aguardando Retirada',
+            'done': 'Reparado'
+        }
+
+        return "{}".format(state_list[self.state])
+
+    @api.model
+    def create(self, values):
+        """Override default Odoo create function and extend."""
+        # Do your custom logic here
+        record = super(MrpRepair, self).create(values)
+
+        template = self.env.ref('mrp_infcam.email_template_mudanca_responsavel')
+        self.env['mail.template'].browse(template.id).send_mail(record.id)
+
+        template2 = self.env.ref('mrp_infcam.email_template_notificacao_cliente')
+        self.env['mail.template'].browse(template2.id).send_mail(record.id)
+
+        return record
+
+    @api.multi
+    def write(self, values):
+        record = super(MrpRepair, self).write(values)
+
+        if 'responsavel' in values:
+            template = self.env.ref('mrp_infcam.email_template_mudanca_responsavel')
+            self.env['mail.template'].browse(template.id).send_mail(self.id)
+
+        if 'state' in values:
+            template2 = self.env.ref('mrp_infcam.email_template_notificacao_cliente')
+            self.env['mail.template'].browse(template2.id).send_mail(self.id)
+
+        return record

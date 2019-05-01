@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_notificacao_cliente" model="mail.template">
+            <field name="name">Notificação de mudança de fase na OS</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Andamento da OS ${object.name}</field>
+            <field name="email_to">${object.partner_id.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_mrp_repair"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                    <h3>Comunicado de andamento de OS - ${object.name}</h3>
+                    <p>
+                        Olá, ${object.partner_id.name}!
+                    </p>
+                    <p>
+                        Informamos que a sua OS, ${object.name}, teve seu status atualizado e agora se encontra no estágio
+                        de ${object.get_mrp_repair_state()[0]}.
+                    </p>
+                    <p>
+                        Em caso de dúvidas, por favor, entrar em contato.
+                    </p>
+                ]]>
+	        </field>
+        </record>
+    </data>
+</odoo>
