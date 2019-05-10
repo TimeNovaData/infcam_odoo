@@ -16,5 +16,6 @@
     'depends': ['base', 'crm', 'stock', 'mrp_repair', 'mail', 'contacts'],
     'data': [
         'views/crm_lead_form.xml',
+        #'views/report_nota_devolucao.xml',
     ],
 }
