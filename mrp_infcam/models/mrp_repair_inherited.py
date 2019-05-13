@@ -34,7 +34,7 @@ class MrpRepair(models.Model):
             ('invoice_except', 'Exceção de Faturamento'),
             ('waiting_stock', 'Aguardando Peças'),
             ('waiting_withdrawal', 'Aguardando Retirada'),
-            ('done', 'Reparado')
+            ('done', 'Reparado/Entregue')
         ],
         required=True,
         readonly=False,
