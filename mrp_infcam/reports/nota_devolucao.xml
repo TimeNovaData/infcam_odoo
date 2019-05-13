@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="mrp_infcam_nota_devolucao"
+            model="mrp.repair"
+            string="Nota de Devolução"
+            report_type="qweb-pdf"
+            name="mrp_infcam.report_nota_devolucao"
+            file="mrp_infcam.report_nota_devolucao"
+        />
+    </data>
+</odoo>

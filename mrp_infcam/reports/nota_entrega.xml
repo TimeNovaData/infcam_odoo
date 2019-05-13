@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="mrp_infcam_nota_entrega"
+            model="mrp.repair"
+            string="Nota de Entrega"
+            report_type="qweb-pdf"
+            name="mrp_infcam.report_nota_entrega"
+            file="mrp_infcam.report_nota_entrega"
+        />
+    </data>
+</odoo>

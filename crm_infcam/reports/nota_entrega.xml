@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="crm_infcam_nota_entrega"
+            model="crm.lead"
+            string="Nota de Entrega"
+            report_type="qweb-pdf"
+            name="crm_infcam.report_nota_entrega"
+            file="crm_infcam.report_nota_entrega"
+        />
+    </data>
+</odoo>

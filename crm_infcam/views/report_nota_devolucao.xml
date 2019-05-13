@@ -1,83 +1,88 @@
 <odoo>
-  <data>
-    <record model="ir.ui.view" id="report_nota_devolucao">
-      <field name="name">crm_infcam.report_nota_devolucao</field>
-      <field name="model">report_nota_devolucao</field>
-      <field name="view_type">qweb</field>
-      <field name="arch" type="xml">
-        <t t-name="report_nota_devolucao">
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <div class="oe_structure"/>
-                    <div class="row">
-                        <div class="col-xs-5 col-xs-offset-1">
-                            <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
-                            <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.partner_id.vat"/></p>
+    <data>
+        <template id="report_nota_devolucao">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <h2 style="text-align: center;">Nota de Devolução de Equipamento</h2>
+                            <div class="row mt32 mb32" id="informations">
+                                <div t-if="o.name" class="col-xs-4">
+                                    <strong>Lead:</strong>
+                                    <p t-field="o.name"/>
+                                </div>
+                                <divc class="col-xs-4">
+                                    <strong>Data de Abertura:</strong>
+                                    <p t-field="o.create_date"/>
+                                </divc>
+                                <div t-if="o.user_id" class="col-xs-4">
+                                    <strong>Técnico:</strong>
+                                    <p t-field="o.user_id"/>
+                                </div>
+                            </div>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Lote/Número de Série</th>
+                                        <th>Referência Interna</th>
+                                    </tr>
+                               </thead>
+                               <tbody>
+                                   <tr t-if="o.produto">
+                                       <td>
+                                           <t t-esc="o.produto.name"/>
+                                       </td>
+                                       <td>
+                                           <t t-esc="o.serie.name"/>
+                                       </td>
+                                       <td>
+                                           <t t-esc="o.serie.ref"/>
+                                       </td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                            <br />
+                            <br />
+                            <p>
+                                Declaro estar recebendo o equipamento constante nesta Ordem de Serviço exatamente como
+                                entreguei para orçamento.
+                            </p>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <table class="table table-condensed" style="width: 100%; margin: 0 auto;">
+                                <tr>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Cliente</strong></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top:none;  width: 30%;"></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Responsável InfCam</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td  style="border-top:none;"></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Data</strong></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                            </table>
+
                         </div>
-                    </div>
-
-                    <h2>
-                        <span>Nota de Devolução # </span>
-                        <span t-field="doc.name"/>
-                    </h2>
-
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Foto</th>
-                                <th>Description</th>
-                                <th class="text-right">Quantity</th>
-                                <th class="text-right">Unit Price</th>
-                                <th class="text-right">Taxes</th>
-                            </tr>
-                       </thead>
-                       <tbody class="sale_tbody">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br/>
-                    <br/>
-                    <p>
-                        Declaro estar recebendo o(s) equipamento(s) constante(s) nesta Ordem de Serviço
-                        exatamente como entreguei para orçamento.
-                    </p>
-                    <br/>
-                    <br/>
-                    <table class="table table-condensed" style="width: 100%; margin: 0 auto;">
-                        <tr>
-                            <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Cliente</strong></td>
-                            <td style="border-top:none;"></td>
-                            <td style="border-top:none;  width: 30%;"></td>
-                            <td style="border-top:none;"></td>
-                            <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Responsável InfCam</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="border-top:none;"></td>
-                        </tr>
-                        <tr>
-                            <td style="border-top:none;"></td>
-                        </tr>
-                        <tr>
-                            <td style="border-top:none;"></td>
-                        </tr>
-                        <tr>
-                            <td  style="border-top:none;"></td>
-                            <td style="border-top:none;"></td>
-                            <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Data</strong></td>
-                            <td style="border-top:none;"></td>
-                            <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Data</strong></td>
-                        </tr>
-                    </table>
-                </div>
+                    </t>
+                </t>
             </t>
-        </t>
-      </field>
-    </record>
-  </data>
+        </template>
+    </data>
 </odoo>

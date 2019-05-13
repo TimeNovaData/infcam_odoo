@@ -1,24 +1,24 @@
 <odoo>
     <data>
-        <template id="report_termo_garantia">
+        <template id="report_nota_recebimento">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.external_layout">
                         <div class="page">
                             <div class="oe_structure"/>
-                            <h2 style="text-align: center;">Termo de Garantia</h2>
+                            <h2 style="text-align: center;">Nota de Recebimento de Equipamento</h2>
                             <div class="row mt32 mb32" id="informations">
                                 <div t-if="o.name" class="col-xs-4">
-                                    <strong>Lead:</strong>
+                                    <strong>Ordem de Serviço:</strong>
                                     <p t-field="o.name"/>
                                 </div>
                                 <divc class="col-xs-4">
                                     <strong>Data de Abertura:</strong>
                                     <p t-field="o.create_date"/>
                                 </divc>
-                                <div t-if="o.user_id" class="col-xs-4">
+                                <div t-if="o.responsavel" class="col-xs-4">
                                     <strong>Técnico:</strong>
-                                    <p t-field="o.user_id"/>
+                                    <p t-field="o.responsavel"/>
                                 </div>
                             </div>
                             <table class="table table-condensed">
@@ -30,15 +30,15 @@
                                     </tr>
                                </thead>
                                <tbody>
-                                   <tr t-if="o.produto">
+                                   <tr t-if="o.product_id">
                                        <td>
-                                           <t t-esc="o.produto.name"/>
+                                           <t t-esc="o.product_id.name"/>
                                        </td>
                                        <td>
-                                           <t t-esc="o.serie.name"/>
+                                           <t t-esc="o.lot_id.name"/>
                                        </td>
                                        <td>
-                                           <t t-esc="o.serie.ref"/>
+                                           <t t-esc="o.lot_id.ref"/>
                                        </td>
                                    </tr>
                                </tbody>
@@ -46,53 +46,16 @@
                             <br />
                             <br />
                             <p>
-                                Garantia de 30 dias se aplica somente aos serviços executados.
+                                1) Prazo para análise e orçamento 3/5 dias úteis e reparo até 30 dias úteis (verificar
+                                disponibilidade de peças).
                             </p>
                             <p>
-                                Favor testar seu aparelho na retirada, reclamações sobre problemas que não tiverem relação
-                                direta com o serviço realizado, não serão acatadas e/ou tratadas como garantia;
+                                2) Caso o cliente não efetue a retirada do bem aprovado(reparado) ou não após 180 dias
+                                de solicitada a retirada, automaticamente autoriza a empresa a alienar, doar, reutilizar,
+                                desmontar, destruir ou destinar o bem à sucata.
                             </p>
                             <p>
-                                Tratamos com eletrônicos, estes suscetíveis podem apresentar defeitos diversos a qualquer
-                                tempo, com isso solicitamos que teste seu aparelho na retirada, pois um sintoma final a
-                                exemplo aparelho não liga, pode ser ocasionado por diversos problemas e não exatamente
-                                por culpa de abertura do aparelho para avaliação, troca de tela e/ou principalmente por
-                                serviços,  por nós realizados anteriormente.
-                            </p>
-                            <p>
-                                A garantia não será validada nos seguintes
-                                casos:
-                            </p>
-                            <ul>
-                                <li>
-                                    Danos físicos de qualquer ordem gerados por forças externas, quedas, impactos e/ou
-                                    torção do aparelho.
-                                </li>
-                                <li>
-                                    Sobre carga de energia falta de habilidade para uso do equipamento e/ou
-                                    danos ocasionado por produtos adquiridos,  instalados e/ou utilizados erroneamente.
-                                </li>
-                                <li>
-                                    Se for constatado que o equipamento foi violado instalado ou reparado por  outra
-                                    pessoa e/ou empresa.
-                                </li>
-                                <li>
-                                    Se houver qualquer sinal  e/ou marcas de queda,riscos,rasuras,alteração.Se for constatado
-                                descolamento com posterior quebra da tela .
-                                </li>
-                            </ul>
-                            <p>
-                                A garantia do serviço realizado será invalidada em qualquer circunstância que seja
-                                identificado mau uso do aparelho.
-                            </p>
-                            <p>
-                                Elucidamos que troca de tela não gera qualquer tipo de defeito em celulares, se o
-                                aparelho entrou sem ligar, trocou a tela e apresentou qualquer defeito, o mesmo se deu
-                                no momento da quebra de tela e não após reparo da mesma.
-                            </p>
-                            <p>
-                                Problemas de sistema não possuem garantia, assim como aparelhos
-                                que cairam liquido e apresentam oxidação de placa .
+                                3) Para troca de peças, somente com 50% no ato da aprovação.
                             </p>
                             <br />
                             <br />

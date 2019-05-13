@@ -16,6 +16,13 @@
     'depends': ['base', 'crm', 'stock', 'mrp_repair', 'mail', 'contacts'],
     'data': [
         'views/crm_lead_form.xml',
-        #'views/report_nota_devolucao.xml',
+        'reports/nota_devolucao.xml',
+        'reports/nota_entrega.xml',
+        'reports/nota_recebimento.xml',
+        'reports/termo_garantia.xml',
+        'views/report_nota_devolucao.xml',
+        'views/report_nota_entrega.xml',
+        'views/report_nota_recebimento.xml',
+        'views/report_termo_garantia.xml',
     ],
 }

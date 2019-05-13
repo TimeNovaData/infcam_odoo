@@ -9,16 +9,16 @@
                             <h2 style="text-align: center;">Termo de Garantia</h2>
                             <div class="row mt32 mb32" id="informations">
                                 <div t-if="o.name" class="col-xs-4">
-                                    <strong>Lead:</strong>
+                                    <strong>Ordem de Serviço:</strong>
                                     <p t-field="o.name"/>
                                 </div>
                                 <divc class="col-xs-4">
                                     <strong>Data de Abertura:</strong>
                                     <p t-field="o.create_date"/>
                                 </divc>
-                                <div t-if="o.user_id" class="col-xs-4">
+                                <div t-if="o.responsavel" class="col-xs-4">
                                     <strong>Técnico:</strong>
-                                    <p t-field="o.user_id"/>
+                                    <p t-field="o.responsavel"/>
                                 </div>
                             </div>
                             <table class="table table-condensed">
@@ -30,15 +30,15 @@
                                     </tr>
                                </thead>
                                <tbody>
-                                   <tr t-if="o.produto">
+                                   <tr t-if="o.product_id">
                                        <td>
-                                           <t t-esc="o.produto.name"/>
+                                           <t t-esc="o.product_id.name"/>
                                        </td>
                                        <td>
-                                           <t t-esc="o.serie.name"/>
+                                           <t t-esc="o.lot_id.name"/>
                                        </td>
                                        <td>
-                                           <t t-esc="o.serie.ref"/>
+                                           <t t-esc="o.lot_id.ref"/>
                                        </td>
                                    </tr>
                                </tbody>

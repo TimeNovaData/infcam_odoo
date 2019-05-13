@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="crm_infcam_termo_garantia"
+            model="crm.lead"
+            string="Termo de Garantia"
+            report_type="qweb-pdf"
+            name="crm_infcam.report_termo_garantia"
+            file="crm_infcam.report_termo_garantia"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+            id="crm_infcam_nota_devolucao"
+            model="crm.lead"
+            string="Nota de Devolução"
+            report_type="qweb-pdf"
+            name="crm_infcam.report_nota_devolucao"
+            file="crm_infcam.report_nota_devolucao"
+        />
+    </data>
+</odoo>

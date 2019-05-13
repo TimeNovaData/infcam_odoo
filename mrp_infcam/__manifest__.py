@@ -18,6 +18,14 @@
         'views/mrp_repair_kanban.xml',
         'views/mrp_repair_form.xml',
         'views/email_template_mudanca_responsavel.xml',
-        'views/email_template_notificacao_cliente.xml'
+        'views/email_template_notificacao_cliente.xml',
+        'reports/nota_devolucao.xml',
+        'reports/nota_entrega.xml',
+        'reports/nota_recebimento.xml',
+        'reports/termo_garantia.xml',
+        'views/report_nota_devolucao.xml',
+        'views/report_nota_entrega.xml',
+        'views/report_nota_recebimento.xml',
+        'views/report_termo_garantia.xml',
     ],
 }

@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <template id="report_nota_entrega">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <h2 style="text-align: center;">Nota de Entrega de Equipamento</h2>
+                            <div class="row mt32 mb32" id="informations">
+                                <div t-if="o.name" class="col-xs-4">
+                                    <strong>Lead:</strong>
+                                    <p t-field="o.name"/>
+                                </div>
+                                <divc class="col-xs-4">
+                                    <strong>Data de Abertura:</strong>
+                                    <p t-field="o.create_date"/>
+                                </divc>
+                                <div t-if="o.user_id" class="col-xs-4">
+                                    <strong>Técnico:</strong>
+                                    <p t-field="o.user_id"/>
+                                </div>
+                            </div>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Lote/Número de Série</th>
+                                        <th>Referência Interna</th>
+                                    </tr>
+                               </thead>
+                               <tbody>
+                                   <tr t-if="o.produto">
+                                       <td>
+                                           <t t-esc="o.produto.name"/>
+                                       </td>
+                                       <td>
+                                           <t t-esc="o.serie.name"/>
+                                       </td>
+                                       <td>
+                                           <t t-esc="o.serie.ref"/>
+                                       </td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                            <br />
+                            <br />
+                            <p>
+                                Declaro estar recebendo o equipamento constante nesta Ordem de Serviço devidamente reparado
+                                e testado por mim ou quem me represente.
+                            </p>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <table class="table table-condensed" style="width: 100%; margin: 0 auto;">
+                                <tr>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Cliente</strong></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top:none;  width: 30%;"></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Responsável InfCam</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                                <tr>
+                                    <td  style="border-top:none;"></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Data</strong></td>
+                                    <td style="border-top:none;"></td>
+                                    <td style="border-top:none;"></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
