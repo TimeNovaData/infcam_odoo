@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_mudanca_responsavel" model="mail.template">
+            <field name="name">Mudança de Responsável - CRM</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Novo Lead atribuído</field>
+            <field name="email_to">${object.user_id.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[<h3>Novo Lead atribuído</h3>
+                    <p>
+                        Olá, ${object.user_id.name}!
+                    </p>
+                    <p>
+                        O Lead ${object.name} foi atribuído a você no Odoo, por favor, verificar.
+                    </p>
+                    <p>
+                        Para acessá-lo, <a href="http://infcam.dyndns.tv:8069/web#id=${object.id}&view_type=form&model=crm.lead&menu_id=109&action=138">clique aqui</a>.
+                    </p>
+                ]]>
+	        </field>
+        </record>
+    </data>
+</odoo>

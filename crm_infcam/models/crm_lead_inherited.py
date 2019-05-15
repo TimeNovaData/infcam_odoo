@@ -63,3 +63,31 @@ class CrmLead(models.Model):
             'type': 'ir.actions.client',
             'tag': 'reload',
         }
+
+    @api.model
+    def create(self, values):
+        """Override default Odoo create function and extend."""
+        # Do your custom logic here
+        record = super(CrmLead, self).create(values)
+
+        template = self.env.ref('crm_infcam.email_template_mudanca_responsavel')
+        self.env['mail.template'].browse(template.id).send_mail(record.id)
+
+        template2 = self.env.ref('crm_infcam.email_template_notificacao_cliente')
+        self.env['mail.template'].browse(template2.id).send_mail(record.id)
+
+        return record
+
+    @api.multi
+    def write(self, values):
+        record = super(CrmLead, self).write(values)
+
+        if 'user_id' in values:
+            template = self.env.ref('crm_infcam.email_template_mudanca_responsavel')
+            self.env['mail.template'].browse(template.id).send_mail(self.id)
+
+        if 'stage_id' in values:
+            template2 = self.env.ref('crm_infcam.email_template_notificacao_cliente')
+            self.env['mail.template'].browse(template2.id).send_mail(self.id)
+
+        return record
