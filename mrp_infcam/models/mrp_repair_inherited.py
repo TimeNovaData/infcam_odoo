@@ -25,20 +25,33 @@ class MrpRepair(models.Model):
     state = fields.Selection(
         string="Status",
         selection=[
-            ('draft', 'Cotação'),
-            ('cancel', 'Cancelado'),
-            ('confirmed', 'Confirmado'),
+            ('novo', 'Novo/Aguardando Avaliação do Técnico'),
+            ('analise', 'Em Análise'),
+            ('draft', 'Orçamento Pronto'),
+            ('aguardando_aprovacao', 'Aguardando Aprovação'),
+            ('cancel', 'Cancelado/Não Aprovado'),
+            ('confirmed', 'Aprovado'),
+            ('aguardando_retorno', 'Avisado Aguardando Retorno'),
+            ('condenado', 'Sem Reparo/Condenado'),
             ('under_repair', 'Em Reparo'),
-            ('ready', 'Pronto para Reparar'),
-            ('2binvoiced', 'Para ser Faturado'),
-            ('invoice_except', 'Exceção de Faturamento'),
             ('waiting_stock', 'Aguardando Peças'),
-            ('waiting_withdrawal', 'Aguardando Retirada'),
-            ('done', 'Reparado/Entregue')
+            ('waiting_withdrawal', 'Pronto/Aguardando Retirada'),
+            ('done', 'Reparado/Entregue'),
+            ('devolvido', 'Devolvido/Sem Reparo'),
+            ('montar_devolver', 'Montar P/ Devolver'),
+            ('descartado', 'Equipamento Descartado'),
+            ('garantia', 'Em Garantia'),
+            ('contato_sem_sucesso', 'Tentativa de Contato S/ Sucesso'),
+            ('2binvoiced', 'Para ser Faturado'),
+            ('invoice_except', 'Exceção de Faturamento')
         ],
         required=True,
         readonly=False,
         track_visibility="onchange"
+    )
+
+    lot_id = fields.Many2one(
+        domain="[('cliente', '=', partner_id)]"
     )
 
     responsavel = fields.Many2one(
@@ -51,16 +64,25 @@ class MrpRepair(models.Model):
     def get_mrp_repair_state(self):
 
         state_list = {
-            'draft': 'Cotação',
-            'cancel': 'Cancelado',
-            'confirmed': 'Confirmado',
+            'novo': 'Novo/Aguardando Avaliação do Técnico',
+            'analise': 'Em Análise',
+            'draft': 'Orçamento Pronto',
+            'aguardando_aprovacao': 'Aguardando Aprovação',
+            'cancel': 'Cancelado/Não Aprovado',
+            'confirmed': 'Aprovado',
+            'aguardando_retorno': 'Avisado Aguardando Retorno',
+            'condenado': 'Sem Reparo/Condenado',
             'under_repair': 'Em Reparo',
-            'ready': 'Pronto para Reparar',
-            '2binvoiced': 'Para ser Faturado',
-            'invoice_except': 'Exceção de Faturamento',
             'waiting_stock': 'Aguardando Peças',
-            'waiting_withdrawal': 'Aguardando Retirada',
-            'done': 'Reparado'
+            'waiting_withdrawal': 'Pronto/Aguardando Retirada',
+            'done': 'Reparado/Entregue',
+            'devolvido': 'Devolvido/Sem Reparo',
+            'montar_devolver': 'Montar P/ Devolver',
+            'descartado': 'Equipamento Descartado',
+            'garantia': 'Em Garantia',
+            'contato_sem_sucesso': 'Tentativa de Contato S/ Sucesso',
+            '2binvoiced': 'Para ser Faturado',
+            'invoice_except': 'Exceção de Faturamento'
         }
 
         return "{}".format(state_list[self.state])
