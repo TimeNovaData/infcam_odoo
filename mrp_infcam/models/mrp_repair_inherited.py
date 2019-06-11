@@ -47,11 +47,24 @@ class MrpRepair(models.Model):
         ],
         required=True,
         readonly=False,
+        default='novo',
         track_visibility="onchange"
     )
 
     lot_id = fields.Many2one(
         domain="[('cliente', '=', partner_id)]"
+    )
+
+    location_id = fields.Many2one(
+        default=9
+    )
+
+    location_dest_id = fields.Many2one(
+        default=9
+    )
+
+    invoice_method = fields.Selection(
+        default='after_repair'
     )
 
     responsavel = fields.Many2one(
