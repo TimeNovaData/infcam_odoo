@@ -32,6 +32,7 @@ class MrpRepair(models.Model):
             ('cancel', 'Cancelado/Não Aprovado'),
             ('confirmed', 'Aprovado'),
             ('aguardando_retorno', 'Avisado Aguardando Retorno'),
+            ('teste', 'Em Teste'),
             ('condenado', 'Sem Reparo/Condenado'),
             ('under_repair', 'Em Reparo'),
             ('waiting_stock', 'Aguardando Peças'),
