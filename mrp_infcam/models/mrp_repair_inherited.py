@@ -77,6 +77,19 @@ class MrpRepair(models.Model):
         help='Responsável pelo suporte',
         track_visibility='onchange')
 
+    def abrir_whatsapp(self, cr, context=None):
+        url = 'https://api.whatsapp.com/send?phone=55{}&text=Ol%C3%A1%2C%20Somos%20da%20INFCAM%20SOLU%C3%87%C3%95ES%20TECNOL%C3%93GICAS.%20Nosso%20contato%20%C3%A9%20sobre%20uma%20Ordem%20de%20Servi%C3%A7o%20que%20voc%C3%AA%20tem%20conosco%20com%20N%C2%BA%20{}.'.format(
+            self.partner_id.mobile,
+            self.name
+        )
+        res = {
+            'type': 'ir.actions.act_url',
+            'target': 'new',
+            'url': url,
+        }
+
+        return res
+
     @api.one
     def get_mrp_repair_state(self):
 
