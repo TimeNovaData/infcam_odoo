@@ -13,7 +13,7 @@
                <button name="action_repair_start" attrs="{'invisible': ['&amp;', ('state','!=','confirmed'), '!', '&amp;', ('state','=','ready'), ('invoice_method','=','b4repair')]}" type="object" string="Start Repair" class="oe_highlight"/>
                <button name="action_repair_cancel_draft" states="cancel" string="Set to Draft" type="object"/>
                <button name="action_repair_end" states="under_repair" type="object" string="End Repair" class="oe_highlight"/>
-               <button name="action_repair_invoice_create" states="2binvoiced" type="object" string="Create Invoice" class="oe_highlight"/>
+               <button name="action_repair_invoice_create" states="waiting_withdrawal" type="object" string="Create Invoice" class="oe_highlight"/>
                <button name="action_repair_cancel" string="Cancel Repair" type="object" attrs="{'invisible':['|',('invoice_method','!=','none'), ('state', 'not in',('confirmed','2binvoiced','ready','under_repair'))]}"/>
                <button name="action_repair_cancel" states="draft" type="object" string="Cancel Repair"/>
            </header>
@@ -33,7 +33,7 @@
                         <label for="product_qty" attrs="{'readonly':[('state','not in',['draft', 'novo'])]}"/>
                         <div class="o_row">
                             <field name="product_qty" attrs="{'readonly':[('state','not in',['draft', 'novo'])]}"/>
-                            <field name="product_uom" groups="product.group_uom"/>
+                            <field name="product_uom" attrs="{'readonly':[('state','not in',['draft', 'novo'])]}"/>
                         </div>
                         <field name="partner_id" attrs="{'required':[('invoice_method','!=','none')]}"/>
                         <field name="lot_id" domain="[('product_id', '=', product_id),('cliente', '=', partner_id)]" context="{'default_product_id': product_id, 'default_cliente': partner_id}" groups="stock.group_production_lot" attrs="{'required': [('tracking', '!=', 'none')], 'readonly': [('state', '=', 'done')]}"/>
