@@ -130,6 +130,13 @@ class MrpRepair(models.Model):
         template2 = self.env.ref('mrp_infcam.email_template_notificacao_cliente')
         self.env['mail.template'].browse(template2.id).send_mail(record.id)
 
+        self.env['res.company'].browse(1).enviar_sms(
+                telefone="55{}".format(record.partner_id.mobile.replace(" ", "")),
+                mensagem="Olá! Informamos que a sua OS, {}, teve seu status atualizado e agora se encontra no "
+                         "estágio de {}. Infcam".format(
+                    record.name, record.get_mrp_repair_state())
+            )
+
         return record
 
     @api.multi
@@ -143,6 +150,13 @@ class MrpRepair(models.Model):
         if 'state' in values:
             template2 = self.env.ref('mrp_infcam.email_template_notificacao_cliente')
             self.env['mail.template'].browse(template2.id).send_mail(self.id)
+
+            self.env['res.company'].browse(1).enviar_sms(
+                telefone="55{}".format(self.partner_id.mobile.replace(" ", "")),
+                mensagem="Olá! Informamos que a sua OS, {}, teve seu status atualizado e agora se encontra no "
+                         "estágio de {}. Infcam".format(
+                    self.name, self.get_mrp_repair_state())
+            )
 
         return record
 
