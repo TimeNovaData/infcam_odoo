@@ -1,43 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="" />
+    <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="Customizacao das visoes MRP Repair">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/__manifest__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/models/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,60 +19,45 @@
       </list>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/mrp/models/mrp_repair_inherited.py" />
-        <option value="$PROJECT_DIR$/mrp/models/__init__.py" />
-        <option value="$PROJECT_DIR$/mrp/__manifest__.py" />
-        <option value="$PROJECT_DIR$/mrp_infcam/__manifest__.py" />
-        <option value="$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py" />
-      </list>
-    </option>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>product_id</find>
+      <find>draft</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1365" />
-    <option name="width" value="1922" />
-    <option name="height" value="1081" />
+    <option name="x" value="170" />
+    <option name="y" value="91" />
+    <option name="width" value="1026" />
+    <option name="height" value="546" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="infcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infcam" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infcam" type="462c0819:PsiDirectoryNode" />
-              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infcam" type="462c0819:PsiDirectoryNode" />
-              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infcam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infcam" type="462c0819:PsiDirectoryNode" />
-              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1PAIgv3FUa6WNcxvOT69UUsIzT3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../docker-compose.yaml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mrp_infcam/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/crm_infcam/views" />
+      <recent name="$PROJECT_DIR$/mrp_infcam/views" />
+      <recent name="$PROJECT_DIR$/mrp_infcam" />
+      <recent name="$PROJECT_DIR$/crm_infcam/reports" />
+      <recent name="$PROJECT_DIR$/sale_infcam" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -113,6 +71,42 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Up" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="../../docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5cd21088" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5cd21088" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@77445a9a" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -123,63 +117,153 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555972283184</updated>
+      <workItem from="1556723757152" duration="5954000" />
+      <workItem from="1557620083866" duration="4195000" />
+      <workItem from="1557783821368" duration="3795000" />
+      <workItem from="1557876468113" duration="611000" />
+      <workItem from="1557878786905" duration="2051000" />
+      <workItem from="1558054825183" duration="64000" />
+      <workItem from="1560087033166" duration="5401000" />
+      <workItem from="1560170979531" duration="760000" />
+      <workItem from="1560191903072" duration="614000" />
+      <workItem from="1560212452999" duration="1392000" />
+      <workItem from="1560214135279" duration="607000" />
+      <workItem from="1560299275029" duration="29000" />
+      <workItem from="1560607723155" duration="4981000" />
+      <workItem from="1562679238604" duration="9066000" />
+      <workItem from="1563205241756" duration="90000" />
+      <workItem from="1563885668415" duration="1254000" />
+      <workItem from="1564060048905" duration="599000" />
+      <workItem from="1565310590237" duration="825000" />
     </task>
+    <task id="LOCAL-00001" summary="Customizacao das visoes MRP Repair">
+      <created>1556054620224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556054620224</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Customizacao das visoes de cotacao">
+      <created>1556055321682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556055321682</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Customizacao das visoes MRP Repair">
+      <created>1556055437006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556055437006</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Emails automaticos na mudanca das OS">
+      <created>1556729103830</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556729103830</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Termos para impressao">
+      <created>1557785769285</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557785769285</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Mudando status de reparado para concluida">
+      <created>1557788196104</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557788196104</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Notificacoes nas mudancas de fase do crm">
+      <created>1557880223221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557880223221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Customizacao dos status de MRP">
+      <created>1560116850526</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560116850526</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ajustes de padroes no modulo de reparo">
+      <created>1560213539058</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1560213539058</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Customizacao das visoes MRP Repair">
+      <created>1560213615821</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560213615821</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Adicionando WhatsApp">
+      <created>1560609247543</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560609247543</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Customizacao da ordem de fluxo e geracao de fatura no MRP Repair">
+      <created>1560610560139</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560610560139</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Adicionando o whatsapp tambem na os">
+      <created>1560613795823</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560613795823</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Adicionando SMS nas OS">
+      <created>1562714319380</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1562714319380</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1365" y="0" width="1922" height="1081" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298647" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mrp/models/recurring_task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" selection-end-line="129" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Customizacao das visoes de cotacao" />
+    <MESSAGE value="Emails automaticos na mudanca das OS" />
+    <MESSAGE value="Termos para impressao" />
+    <MESSAGE value="Mudando status de reparado para concluida" />
+    <MESSAGE value="Notificacoes nas mudancas de fase do crm" />
+    <MESSAGE value="Customizacao dos status de MRP" />
+    <MESSAGE value="Ajustes de padroes no modulo de reparo" />
+    <MESSAGE value="Customizacao das visoes MRP Repair" />
+    <MESSAGE value="Adicionando WhatsApp" />
+    <MESSAGE value="Customizacao da ordem de fluxo e geracao de fatura no MRP Repair" />
+    <MESSAGE value="Adicionando o whatsapp tambem na os" />
+    <MESSAGE value="Adicionando SMS nas OS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando SMS nas OS" />
   </component>
 </project>

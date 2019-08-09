@@ -176,3 +176,14 @@ class MrpRepair(models.Model):
                 vals['state'] = 'waiting_withdrawal'
             repair.write(vals)
         return True
+
+    @api.multi
+    def action_repair_confirm(self):
+        """ Repair order state is set to 'To be invoiced' when invoice method
+        is 'Before repair' else state becomes 'Confirmed'.
+        @param *arg: Arguments
+        @return: True
+        """
+        for repair in self:
+            repair.write({'state': 'confirmed'})
+        return True
