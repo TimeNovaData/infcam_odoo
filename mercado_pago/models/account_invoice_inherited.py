@@ -24,6 +24,18 @@ class AccountInvoice(models.Model):
     _name = 'account.invoice'
     _inherit = ['account.invoice']
 
+    mercado_pago_init_point = fields.Char(
+        string='Init Point',
+        track_visibility='onchange')
+
+    mercado_pago_sandbox_init_point = fields.Char(
+        string='Sandbox Init Point',
+        track_visibility='onchange')
+
+    mercado_pago_id_preferencia = fields.Char(
+        string='ID Preferência',
+        track_visibility='onchange')
+
     def criar_preferencia(self, cr, mp, cliente, context=None):
         '''
         Criar uma ordem de pagamento
@@ -32,16 +44,21 @@ class AccountInvoice(models.Model):
         :param kwargs:
         :return:
         '''
+        itens_fatura = []
+
+        for item in self.invoice_line_ids:
+            linha_fatura = {
+                "title": item.name,
+                "quantity": item.quantity,
+                "currency_id": "BRL",
+                "unit_price": item.price_unit,
+                'payment_method_id': "ticket",
+            }
+
+            itens_fatura.append(linha_fatura)
+
         preference = {
-            "items": [
-                {
-                    "title": "Serviço de Testes",
-                    "quantity": 1,
-                    "currency_id": "BRL",
-                    "unit_price": 10.01,
-                    'payment_method_id': "ticket",
-                }
-            ],
+            "items": itens_fatura,
             "payer": cliente,
             "payment_methods": {
                 "excluded_payment_methods": [
@@ -62,42 +79,54 @@ class AccountInvoice(models.Model):
 
         preference_result = mp.create_preference(preference)
 
-        print(preference_result["response"]["sandbox_init_point"])
-
-        return json.dumps(preference_result, indent=4)
+        return preference_result
 
     def gerar_checkout(self, cr, context=None):
-        # mp = mercadopago.MP("7099317734495678", "2Es81E92Wxrc5ACjKXEhLwig6WnZI2J0")
-        mp = mercadopago.MP("TEST-7099317734495678-081714-5aef01acc34b8678d5ce305e1e3edf77-2093730")
-        # tipos = mp.get("/v1/identification_types")
-        # mp.sandbox_mode(True)
+        if not self.mercado_pago_id_preferencia:
+            mp = mercadopago.MP(self.company_id.mercado_pago_access_token)
 
-        response = mp.get("/v1/customers/search", {
-            "email": "edson.junior@outboxsistemas.com"
-        })
-
-        cliente = None
-
-        if response["status"] == 200:
-            if len(response['response']['results']) > 0:
-                cliente = response['response']['results'][0]
-
-        if not cliente:
-            cliente = mp.post("/v1/customers", {
-                "name": "Edson",
-                "surname": "Junior",
-                "email": "edson.junior@outboxsistemas.com",
-                "identification": {
-                    "type": "CPF",
-                    "number": "08887138435"
-                }
+            response = mp.get("/v1/customers/search", {
+                "email": self.partner_id.email
             })
 
-        preferencia = self.criar_preferencia(cr, mp, cliente)
+            cliente = None
 
-        print(preferencia)
+            if response["status"] == 200:
+                if len(response['response']['results']) > 0:
+                    cliente = response['response']['results'][0]
 
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'reload',
-        }
+            if not cliente:
+                if self.partner_id.company_type == 'person':
+                    type = "CPF"
+                else:
+                    type = "CNPJ"
+
+                cliente = mp.post("/v1/customers", {
+                    "name": self.partner_id.name,
+                    "email": self.partner_id.email,
+                    "identification": {
+                        "type": type,
+                        "number": self.partner_id.vat
+                    }
+                })
+
+            preferencia = self.criar_preferencia(cr, mp, cliente)
+
+            if preferencia['status'] == 201:
+                self.write({
+                    'mercado_pago_init_point': preferencia['response']['init_point'],
+                    'mercado_pago_sandbox_init_point': preferencia['response']['sandbox_init_point'],
+                    'mercado_pago_id_preferencia': preferencia['response']['id']
+                })
+
+            return {
+                'type': 'ir.actions.act_url',
+                'target': 'new',
+                'url': self.mercado_pago_sandbox_init_point,
+            }
+        else:
+            return {
+                'type': 'ir.actions.act_url',
+                'target': 'new',
+                'url': self.mercado_pago_sandbox_init_point,
+            }

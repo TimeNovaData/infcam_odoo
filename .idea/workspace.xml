@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="Customizacao das visoes MRP Repair">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercado_pago/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,12 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
   </component>
   <component name="ProjectId" id="1PAIgv3FUa6WNcxvOT69UUsIzT3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -88,18 +83,18 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@660607fc" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5cd21088" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@660607fc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7231e25e" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@441fb543" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5cd21088" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@77445a9a" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@660607fc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7231e25e" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@440497ec" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -134,7 +129,12 @@
       <workItem from="1563205241756" duration="90000" />
       <workItem from="1563885668415" duration="1254000" />
       <workItem from="1564060048905" duration="599000" />
-      <workItem from="1565310590237" duration="825000" />
+      <workItem from="1565310590237" duration="1552000" />
+      <workItem from="1565660871650" duration="880000" />
+      <workItem from="1565741085327" duration="355000" />
+      <workItem from="1566051210643" duration="960000" />
+      <workItem from="1566254534856" duration="117000" />
+      <workItem from="1566862473881" duration="5164000" />
     </task>
     <task id="LOCAL-00001" summary="Customizacao das visoes MRP Repair">
       <created>1556054620224</created>
@@ -245,7 +245,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

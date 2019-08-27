@@ -15,6 +15,6 @@
     'version': '1.0',
     'depends': ['base', 'sale_management', 'mail', 'contacts'],
     'data': [
-
+        'views/account_invoice_form_inherited.xml'
     ],
 }
