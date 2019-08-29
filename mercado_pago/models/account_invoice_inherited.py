@@ -254,7 +254,7 @@ class AccountInvoice(models.Model):
                 'invoice_ids': [[4, self.id, 'None']],
                 'default_invoice_ids': [[4, self.id, 'None']],
                 'amount': pagamento['transaction_amount'],
-                'journal_id': 7,
+                'journal_id': 10,
                 'payment_date': pagamento['date_approved'],
                 'partner_id': self.partner_id.id,
                 'payment_method_id': 3,

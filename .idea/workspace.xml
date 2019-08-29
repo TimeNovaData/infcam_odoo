@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="Customizacao das visoes MRP Repair">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="232" selection-start-line="232" selection-end-line="232" />
+            <state relative-caret-position="154">
+              <caret line="256" column="32" selection-start-line="256" selection-start-column="32" selection-end-line="256" selection-end-column="32" />
               <folding>
                 <element signature="e#24#60#0" expanded="true" />
               </folding>
@@ -249,7 +247,7 @@
       <workItem from="1566254534856" duration="117000" />
       <workItem from="1566862473881" duration="5164000" />
       <workItem from="1567103027703" duration="1087000" />
-      <workItem from="1567104347857" duration="2248000" />
+      <workItem from="1567104347857" duration="2359000" />
     </task>
     <task id="LOCAL-00001" summary="Customizacao das visoes MRP Repair">
       <created>1556054620224</created>
@@ -353,7 +351,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9512000" />
+    <option name="totallyTimeSpent" value="9623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,8 +453,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        <state relative-caret-position="154">
+          <caret line="256" column="32" selection-start-line="256" selection-start-column="32" selection-end-line="256" selection-end-column="32" />
           <folding>
             <element signature="e#24#60#0" expanded="true" />
           </folding>
