@@ -8,6 +8,7 @@
             <field name="state" position="after">
                 <button name="gerar_checkout_boleto" states="open" string="Gerar Boleto" type="object" groups="account.group_account_invoice"/>
                 <button name="gerar_checkout" states="open" string="Gerar Cobrança" type="object" groups="account.group_account_invoice"/>
+                <button name="consultar_pagamento" states="open" string="Consultar Pagamento" type="object" groups="account.group_account_invoice"/>
             </field>
         </field>
     </record>

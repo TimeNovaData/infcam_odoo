@@ -226,3 +226,45 @@ class AccountInvoice(models.Model):
                 'target': 'new',
                 'url': self.mercado_pago_init_point,
             }
+
+    def consultar_pagamento(self, cr, context=None):
+        if self.mercado_pago_id_preferencia:
+            mp = mercadopago.MP(self.company_id.mercado_pago_access_token)
+
+            response = mp.get("/v1/payments/search", {
+                "external_reference": "{}".format(self.id)
+            })
+
+            if response['status'] == 200:
+                for pagamento in response['response']['results']:
+                    self.registrar_pagamento(cr, pagamento)
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'reload',
+            }
+        else:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'reload',
+            }
+
+    def registrar_pagamento(self, cr, pagamento):
+        if pagamento['status'] == 'approved':
+            valores = {
+                'invoice_ids': [[4, self.id, 'None']],
+                'default_invoice_ids': [[4, self.id, 'None']],
+                'amount': pagamento['transaction_amount'],
+                'journal_id': 7,
+                'payment_date': pagamento['date_approved'],
+                'partner_id': self.partner_id.id,
+                'payment_method_id': 3,
+                'payment_type': 'inbound',
+                'partner_type': 'customer',
+                'has_invoices': True,
+            }
+
+            pagamento = self.env['account.payment'].create(valores)
+
+            pagamento.action_validate_invoice_payment()
+
+            return pagamento
