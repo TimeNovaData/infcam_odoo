@@ -6,7 +6,8 @@
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
             <field name="state" position="after">
-                <button name="gerar_checkout" states="open" string="Gerar Boleto" type="object" groups="account.group_account_invoice"/>
+                <button name="gerar_checkout_boleto" states="open" string="Gerar Boleto" type="object" groups="account.group_account_invoice"/>
+                <button name="gerar_checkout" states="open" string="Gerar Cobrança" type="object" groups="account.group_account_invoice"/>
             </field>
         </field>
     </record>

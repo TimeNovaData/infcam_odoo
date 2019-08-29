@@ -36,6 +36,20 @@ class AccountInvoice(models.Model):
         string='ID Preferência',
         track_visibility='onchange')
 
+    mercado_pago_status = fields.Selection(
+        string='Status no Mercado Pago',
+        track_visibility='onchange',
+        selection=[('APRO', 'Pagamento aprovado'),
+                   ('CONT', 'Pagamento pendente'),
+                   ('OTHE', 'Recusado por erro geral'),
+                   ('CALL', 'Recusado com validação para autorizar'),
+                   ('FUND', 'Recusado por quantia insuficiente'),
+                   ('SECU', 'Recusado por código de segurança inválido'),
+                   ('EXPI', 'Recusado por problema com a data de vencimento'),
+                   ('FORM', 'Recusado por erro no formulário'),
+        ]
+    )
+
     def criar_preferencia(self, cr, mp, cliente, context=None):
         '''
         Criar uma ordem de pagamento
@@ -60,21 +74,7 @@ class AccountInvoice(models.Model):
         preference = {
             "items": itens_fatura,
             "payer": cliente,
-            "payment_methods": {
-                "excluded_payment_methods": [
-                    {
-                        "id": "master"
-                    }
-                ],
-                "excluded_payment_types": [
-                    {
-                        "id": "credit_card"
-                    }
-                ],
-                "installments": 12,
-                "default_payment_method_id": None,
-                "default_installments": None
-            },
+            "external_reference": "{}".format(self.id)
         }
 
         preference_result = mp.create_preference(preference)
@@ -122,11 +122,107 @@ class AccountInvoice(models.Model):
             return {
                 'type': 'ir.actions.act_url',
                 'target': 'new',
-                'url': self.mercado_pago_sandbox_init_point,
+                'url': self.mercado_pago_init_point,
             }
         else:
             return {
                 'type': 'ir.actions.act_url',
                 'target': 'new',
-                'url': self.mercado_pago_sandbox_init_point,
+                'url': self.mercado_pago_init_point,
+            }
+
+    def criar_preferencia_boleto(self, cr, mp, cliente, context=None):
+        '''
+        Criar uma ordem de pagamento
+        :param mp:
+        :param cliente:
+        :param kwargs:
+        :return:
+        '''
+        itens_fatura = []
+
+        for item in self.invoice_line_ids:
+            linha_fatura = {
+                "title": item.name,
+                "quantity": item.quantity,
+                "currency_id": "BRL",
+                "unit_price": item.price_unit,
+                'payment_method_id': "ticket",
+            }
+
+            itens_fatura.append(linha_fatura)
+
+        preference = {
+            "items": itens_fatura,
+            "payer": cliente,
+            "payment_methods": {
+                "excluded_payment_methods": [
+                    {
+                        "id": "master"
+                    }
+                ],
+                "excluded_payment_types": [
+                    {
+                        "id": "credit_card"
+                    }
+                ],
+                "installments": 12,
+                "default_payment_method_id": None,
+                "default_installments": None
+            },
+            "external_reference": "{}".format(self.id)
+        }
+
+        preference_result = mp.create_preference(preference)
+
+        return preference_result
+
+    def gerar_checkout_boleto(self, cr, context=None):
+        if not self.mercado_pago_id_preferencia:
+            mp = mercadopago.MP(self.company_id.mercado_pago_access_token)
+
+            response = mp.get("/v1/customers/search", {
+                "email": self.partner_id.email
+            })
+
+            cliente = None
+
+            if response["status"] == 200:
+                if len(response['response']['results']) > 0:
+                    cliente = response['response']['results'][0]
+
+            if not cliente:
+                if self.partner_id.company_type == 'person':
+                    type = "CPF"
+                else:
+                    type = "CNPJ"
+
+                cliente = mp.post("/v1/customers", {
+                    "name": self.partner_id.name,
+                    "email": self.partner_id.email,
+                    "identification": {
+                        "type": type,
+                        "number": self.partner_id.vat
+                    }
+                })
+
+            preferencia = self.criar_preferencia_boleto(cr, mp, cliente)
+
+            if preferencia['status'] == 201:
+                self.write({
+                    'mercado_pago_init_point': preferencia['response']['init_point'],
+                    'mercado_pago_sandbox_init_point': preferencia['response']['sandbox_init_point'],
+                    'mercado_pago_id_preferencia': preferencia['response']['id']
+                })
+
+            return {
+                'type': 'ir.actions.act_url',
+                'target': 'new',
+                'url': self.mercado_pago_init_point,
+            }
+        else:
+            return {
+                'type': 'ir.actions.act_url',
+                'target': 'new',
+                'url': self.mercado_pago_init_point,
             }
