@@ -227,8 +227,9 @@ class AccountInvoice(models.Model):
                 'url': self.mercado_pago_init_point,
             }
 
-    def consultar_pagamento(self, cr, context=None):
+    def consultar_pagamento(self, context=None):
         if self.mercado_pago_id_preferencia:
+
             mp = mercadopago.MP(self.company_id.mercado_pago_access_token)
 
             response = mp.get("/v1/payments/search", {
@@ -237,7 +238,7 @@ class AccountInvoice(models.Model):
 
             if response['status'] == 200:
                 for pagamento in response['response']['results']:
-                    self.registrar_pagamento(cr, pagamento)
+                    self.registrar_pagamento(pagamento)
             return {
                 'type': 'ir.actions.client',
                 'tag': 'reload',
@@ -248,7 +249,7 @@ class AccountInvoice(models.Model):
                 'tag': 'reload',
             }
 
-    def registrar_pagamento(self, cr, pagamento):
+    def registrar_pagamento(self, pagamento):
         if pagamento['status'] == 'approved':
             valores = {
                 'invoice_ids': [[4, self.id, 'None']],
@@ -268,3 +269,20 @@ class AccountInvoice(models.Model):
             pagamento.action_validate_invoice_payment()
 
             return pagamento
+
+    @api.multi
+    def consultar_pagamento_cron(self, context=None):
+        """
+        Função para buscar pagamentos no mercado pago.
+        Função a ser executada de hora em hora com o intuido de verificar novos pagamentos efetuados no mercado pago e
+        efetuar a baixa da fatura correspondente.
+        :param context: Contexto da aplicação. Default None
+        :return: Null
+        """
+        faturas_pendentes = self.env['account.invoice'].search([
+            ('state', '=', 'open'),
+            ('mercado_pago_id_preferencia', '!=', False)
+        ])
+
+        for fatura in faturas_pendentes:
+            fatura.consultar_pagamento()
