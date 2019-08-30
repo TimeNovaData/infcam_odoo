@@ -100,7 +100,7 @@
                             <br />
                             <table class="table table-condensed" style="width: 100%; margin: 0 auto;">
                                 <tr>
-                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong>Cliente</strong></td>
+                                    <td style="border-top: 1px solid; text-align:center; margin: 10px; width: 30%"><strong><t t-esc="o.partner_id.name"/></strong></td>
                                     <td style="border-top:none;"></td>
                                     <td style="border-top:none;  width: 30%;"></td>
                                     <td style="border-top:none;"></td>
