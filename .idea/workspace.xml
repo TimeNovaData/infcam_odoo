@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="Customizacao das visoes MRP Repair">
-      <change beforePath="$PROJECT_DIR$/mrp_infcam/views/report_nota_devolucao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/views/report_nota_devolucao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrp_infcam/views/report_nota_recebimento.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/views/report_nota_recebimento.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,38 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_devolucao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="57" column="153" selection-start-line="57" selection-start-column="123" selection-end-line="57" selection-end-column="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="57" column="153" selection-start-line="57" selection-start-column="153" selection-end-line="57" selection-end-column="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_recebimento.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="65" column="153" selection-start-line="65" selection-start-column="153" selection-end-line="65" selection-end-column="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml">
+        <entry file="file://$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="102" column="153" selection-start-line="102" selection-start-column="153" selection-end-line="102" selection-end-column="153" />
+            <state relative-caret-position="180">
+              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -74,7 +45,6 @@
       <list>
         <option value="$PROJECT_DIR$/mercado_pago/models/__init__.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" />
         <option value="$PROJECT_DIR$/mercado_pago/__manifest__.py" />
         <option value="$PROJECT_DIR$/mercado_pago/data/consultar_pagamento_cron.xml" />
         <option value="$PROJECT_DIR$/mercado_pago/models/account_invoice_inherited.py" />
@@ -82,6 +52,7 @@
         <option value="$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml" />
         <option value="$PROJECT_DIR$/mrp_infcam/views/report_nota_recebimento.xml" />
         <option value="$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml" />
+        <option value="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" />
       </list>
     </option>
   </component>
@@ -97,7 +68,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,18 +78,19 @@
             <path>
               <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
-              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
+              <item name="mercado_pago" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
-              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
+              <item name="mercado_pago" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,7 +199,8 @@
       <workItem from="1566862473881" duration="5164000" />
       <workItem from="1567103027703" duration="1087000" />
       <workItem from="1567104347857" duration="3755000" />
-      <workItem from="1567172425353" duration="1400000" />
+      <workItem from="1567172425353" duration="2019000" />
+      <workItem from="1567698314587" duration="251000" />
     </task>
     <task id="LOCAL-00001" summary="Customizacao das visoes MRP Repair">
       <created>1556054620224</created>
@@ -332,7 +304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12419000" />
+    <option name="totallyTimeSpent" value="13289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,7 +319,7 @@
     <frame x="0" y="23" width="1920" height="959" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21352503" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21565495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -358,7 +330,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298731" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19723183" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19723183" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.3298731" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -477,13 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mercado_pago/models/res_company_inherited.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -496,17 +461,10 @@
         <state relative-caret-position="-539" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_devolucao.xml">
+    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="57" column="153" selection-start-line="57" selection-start-column="123" selection-end-line="57" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="57" column="153" selection-start-line="57" selection-start-column="153" selection-end-line="57" selection-end-column="153" />
+        <state relative-caret-position="149">
+          <caret line="102" column="153" selection-start-line="102" selection-start-column="153" selection-end-line="102" selection-end-column="153" />
         </state>
       </provider>
     </entry>
@@ -517,10 +475,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_termo_garantia.xml">
+    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_entrega.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="102" column="153" selection-start-line="102" selection-start-column="153" selection-end-line="102" selection-end-column="153" />
+        <state relative-caret-position="291">
+          <caret line="57" column="153" selection-start-line="57" selection-start-column="153" selection-end-line="57" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mrp_infcam/views/report_nota_devolucao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="57" column="153" selection-start-line="57" selection-start-column="123" selection-end-line="57" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
         </state>
       </provider>
     </entry>
