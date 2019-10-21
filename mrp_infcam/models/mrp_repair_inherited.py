@@ -47,7 +47,9 @@ class MrpRepair(models.Model):
             ('garantia', 'Em Garantia'),
             ('contato_sem_sucesso', 'Tentativa de Contato S/ Sucesso'),
             ('2binvoiced', 'Para ser Faturado'),
-            ('invoice_except', 'Exceção de Faturamento')
+            ('invoice_except', 'Exceção de Faturamento'),
+            ('tecnico_caminho', 'Técnico a Caminho'),
+            ('tecnico_local', 'Técnico no Local')
         ],
         required=True,
         readonly=False,
@@ -113,7 +115,9 @@ class MrpRepair(models.Model):
             'garantia': 'Em Garantia',
             'contato_sem_sucesso': 'Tentativa de Contato S/ Sucesso',
             '2binvoiced': 'Para ser Faturado',
-            'invoice_except': 'Exceção de Faturamento'
+            'invoice_except': 'Exceção de Faturamento',
+            'tecnico_caminho': 'Técnico a Caminho',
+            'tecnico_local': 'Técnico no Local'
         }
 
         return "{}".format(state_list[self.state])

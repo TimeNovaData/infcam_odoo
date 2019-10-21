@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="73a8323c-675c-44d4-8208-71960ae7164a" name="Default Changelist" comment="Customizacao das visoes MRP Repair">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +12,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mercado_pago/views/account_invoice_form_inherited.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crm_infcam/models/crm_lead_inherited.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="885">
+              <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -56,10 +73,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="962" />
+    <option name="width" value="1917" />
+    <option name="height" value="939" />
   </component>
   <component name="ProjectId" id="1PAIgv3FUa6WNcxvOT69UUsIzT3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -68,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,19 +97,35 @@
             <path>
               <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
-              <item name="mercado_pago" type="462c0819:PsiDirectoryNode" />
+              <item name="crm_infcam" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
-              <item name="mercado_pago" type="462c0819:PsiDirectoryNode" />
+              <item name="crm_infcam" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
+              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
+              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="infcam_odoo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="infcam_odoo" type="462c0819:PsiDirectoryNode" />
+              <item name="mrp_infcam" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,7 +235,13 @@
       <workItem from="1567103027703" duration="1087000" />
       <workItem from="1567104347857" duration="3755000" />
       <workItem from="1567172425353" duration="2019000" />
-      <workItem from="1567698314587" duration="251000" />
+      <workItem from="1567698314587" duration="1063000" />
+      <workItem from="1568313633778" duration="611000" />
+      <workItem from="1568376574740" duration="449000" />
+      <workItem from="1568810456366" duration="627000" />
+      <workItem from="1568813810639" duration="681000" />
+      <workItem from="1569522967420" duration="258000" />
+      <workItem from="1570217962296" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Customizacao das visoes MRP Repair">
       <created>1556054620224</created>
@@ -304,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13289000" />
+    <option name="totallyTimeSpent" value="16750000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,10 +357,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="959" extended-state="6" />
-    <editor active="true" />
+    <frame x="3" y="23" width="1917" height="939" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21565495" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22613333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -330,7 +370,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298731" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19723183" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20188902" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.3298731" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -435,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crm_infcam/models/crm_lead_inherited.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="57" column="55" selection-start-line="44" selection-start-column="8" selection-end-line="57" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -493,6 +526,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm_infcam/models/crm_lead_inherited.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mrp_infcam/models/mrp_repair_inherited.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
         </state>
       </provider>
     </entry>
